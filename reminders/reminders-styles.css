@@ -1,4 +1,4 @@
-/* Reminders & Notifications Styles - Updated with Manual Expansion & Inline Toggles */
+/* Reminders & Notifications Styles - Updated with Layout Fix */
 
 /* Bell icon in header */
 .header-bell {
@@ -844,7 +844,7 @@
   background: rgba(243, 156, 18, 0.05);
 }
 
-/* UPDATED: System notification cards - enhanced with expand button */
+/* UPDATED: System notification cards - Fixed layout without absolute positioning */
 .system-notification-card {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
@@ -867,7 +867,7 @@
   border-color: rgba(0, 0, 0, 0.1);
 }
 
-/* UPDATED: System notification header with expand button positioned separately */
+/* UPDATED: System notification header - no more relative positioning */
 .system-notification-header {
   display: flex;
   justify-content: space-between;
@@ -875,7 +875,7 @@
   padding: var(--spacing-md);
   background: rgba(255, 255, 255, 0.03);
   border-bottom: 1px solid var(--border-color);
-  position: relative; /* For absolute positioning of expand button */
+  /* REMOVED: position: relative; - no longer needed */
 }
 
 .light-theme .system-notification-header {
@@ -944,18 +944,16 @@
   background: #FF7043;
 }
 
-/* UPDATED: System notification controls without expand button */
+/* UPDATED: System notification controls - now includes expand button in flow */
 .system-notification-controls {
   display: flex;
   align-items: center;
+  gap: var(--spacing-sm); /* Add gap between expand button and toggle */
   flex-shrink: 0;
 }
 
-/* NEW: Expand button positioned in bottom right corner */
+/* UPDATED: Expand button - moved to header controls, no absolute positioning */
 .system-expand-btn {
-  position: absolute;
-  bottom: 8px;
-  right: 8px;
   background: transparent;
   border: none;
   color: var(--text-secondary);
@@ -968,15 +966,15 @@
   justify-content: center;
   cursor: pointer;
   transition: all var(--transition-fast);
-  opacity: 0; /* Hidden by default */
-  pointer-events: none;
-  z-index: 10;
+  /* REMOVED: position: absolute, bottom, right, z-index */
+  /* REMOVED: opacity: 0, pointer-events: none */
+  /* Now flows naturally in the header */
 }
 
-/* Show expand button when enabled */
+/* UPDATED: Show expand button when enabled - simplified */
 .system-notification-card.enabled .system-expand-btn {
-  opacity: 1;
-  pointer-events: all;
+  /* No longer need to override opacity/pointer-events */
+  color: var(--text-secondary);
 }
 
 .system-expand-btn:hover {
@@ -1071,7 +1069,7 @@
   font-style: italic;
 }
 
-/* Responsive adjustments */
+/* UPDATED: Responsive adjustments for mobile */
 @media (max-width: 600px) {
   .reminders-panel {
     max-width: 100%;
@@ -1080,6 +1078,31 @@
   
   .system-notification-header {
     padding: var(--spacing-sm);
+    /* Ensure proper spacing on mobile */
+  }
+  
+  .system-notification-controls {
+    gap: var(--spacing-xs); /* Smaller gap on mobile */
+  }
+  
+  .system-expand-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 1.1rem;
+  }
+  
+  .reminder-toggle-switch {
+    width: 44px;
+    height: 22px;
+  }
+  
+  .reminder-toggle-slider:before {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .reminder-toggle-switch input:checked + .reminder-toggle-slider:before {
+    transform: translateX(20px);
   }
   
   .system-notification-settings.expanded {
@@ -1191,24 +1214,34 @@
   .custom-reminder-header-controls .material-icons-round {
     right: var(--spacing-sm);
   }
+}
+
+/* UPDATED: Very small screen adjustments */
+@media (max-width: 360px) {
+  .system-notification-controls {
+    gap: 2px; /* Minimal gap on very small screens */
+  }
+  
+  .system-expand-btn {
+    width: 24px;
+    height: 24px;
+    font-size: 1rem;
+  }
   
   .reminder-toggle-switch {
-    width: 44px;
-    height: 22px;
+    width: 40px;
+    height: 20px;
   }
   
   .reminder-toggle-slider:before {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
   }
   
   .reminder-toggle-switch input:checked + .reminder-toggle-slider:before {
-    transform: translateX(20px);
+    transform: translateX(18px);
   }
-}
-
-/* Additional responsive adjustments for very small screens */
-@media (max-width: 360px) {
+  
   .form-group {
     margin-bottom: var(--spacing-md);
   }
@@ -1296,34 +1329,34 @@
   }
 }
   
-  /* Print styles for reports */
-  @media print {
-    .reminders-panel {
-      position: static;
-      max-width: none;
-      height: auto;
-      background: white;
-      color: black;
-      padding: 20px;
-      box-shadow: none;
-    }
-    
-    .system-notification-card, 
-    .custom-reminder-item {
-      box-shadow: none;
-      border: 1px solid #ccc;
-    }
-    
-    .system-expand-btn,
-    .close-panel,
-    .back-btn {
-      display: none;
-    }
-    
-    .reminder-time-window,
-    .reminder-times,
-    .reminder-next {
-      background: #f0f0f0;
-      color: #333;
-    }
+/* Print styles for reports */
+@media print {
+  .reminders-panel {
+    position: static;
+    max-width: none;
+    height: auto;
+    background: white;
+    color: black;
+    padding: 20px;
+    box-shadow: none;
   }
+  
+  .system-notification-card, 
+  .custom-reminder-item {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+  
+  .system-expand-btn,
+  .close-panel,
+  .back-btn {
+    display: none;
+  }
+  
+  .reminder-time-window,
+  .reminder-times,
+  .reminder-next {
+    background: #f0f0f0;
+    color: #333;
+  }
+}
