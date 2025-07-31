@@ -7,6 +7,7 @@
  * - Multiple times support for custom reminders
  * - Manual expansion for system notifications
  * - Inline toggles for custom reminders
+ * - FIXED: Expand button positioning to prevent overlap with toggle
  */
 
 class RemindersManager {
@@ -925,7 +926,7 @@ class RemindersManager {
   }
   
   /**
-   * UPDATED: Render system notifications with expand buttons in bottom right corner
+   * UPDATED: Render system notifications with expand button in header controls
    */
   renderSystemNotifications() {
     return Object.entries(this.data.systemNotifications).map(([type, notification]) => {
@@ -946,6 +947,13 @@ class RemindersManager {
               </div>
             </div>
             <div class="system-notification-controls">
+              <!-- UPDATED: Expand button is now first in controls, before toggle -->
+              <button class="system-expand-btn ${isExpanded ? 'expanded' : ''}" 
+                      data-type="${type}"
+                      title="Expand settings"
+                      style="opacity: ${notification.enabled ? '1' : '0.3'}; pointer-events: ${notification.enabled ? 'all' : 'none'};">
+                <i class="material-icons-round">keyboard_arrow_down</i>
+              </button>
               <label class="reminder-toggle-switch">
                 <input type="checkbox" 
                        class="system-notification-toggle"
@@ -954,11 +962,6 @@ class RemindersManager {
                 <span class="reminder-toggle-slider"></span>
               </label>
             </div>
-            <button class="system-expand-btn ${isExpanded ? 'expanded' : ''}" 
-                    data-type="${type}"
-                    title="Expand settings">
-              <i class="material-icons-round">keyboard_arrow_down</i>
-            </button>
           </div>
           
           <div class="system-notification-settings ${isExpanded ? 'expanded' : ''}">
@@ -1135,7 +1138,7 @@ class RemindersManager {
   }
   
   /**
-   * UPDATED: Toggle system notification - no auto-expansion, just update expand button visibility
+   * UPDATED: Toggle system notification - with expand button visibility control
    */
   toggleSystemNotification(type, enabled) {
     console.log('Toggling system notification:', type, enabled);
@@ -1167,7 +1170,7 @@ class RemindersManager {
           expandBtn.style.pointerEvents = 'all';
         } else {
           card.classList.remove('enabled');
-          expandBtn.style.opacity = '0';
+          expandBtn.style.opacity = '0.3';
           expandBtn.style.pointerEvents = 'none';
           // Also collapse if it was expanded
           if (this.expandedSystemNotifications.has(type)) {
