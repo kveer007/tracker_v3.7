@@ -1,4 +1,4 @@
-/* Workout Tracker Styles - Complete Updated File */
+/* Workout Tracker Styles */
 
 /* Tab active state */
 .tab-btn.active[data-app="workout"] {
@@ -48,12 +48,12 @@
 }
 
 .workout-app .workout-tab.completed {
-  background: rgba(76, 175, 80, 0.1);
+  background: rgba(103, 58, 183, 0.1);
   border-color: var(--workout-primary);
 }
 
 .light-theme .workout-app .workout-tab.completed {
-  background: rgba(76, 175, 80, 0.05);
+  background: rgba(103, 58, 183, 0.05);
 }
 
 .workout-app .workout-tab.completed .material-icons-round {
@@ -93,22 +93,19 @@
   font-size: 1.1rem;
 }
 
-/* Workout Analytics Container - Fixed Layout */
+/* Workout Analytics CSS Styles - Complete Updated File */
+
+/* Workout analytics container */
 .workout-analytics-container {
-  padding: var(--spacing-md) var(--spacing-sm);
-  width: 100%;
-  box-sizing: border-box;
-  overflow-x: hidden;
+  padding: var(--spacing-sm) 0;
 }
 
-/* Workout view selector - Fixed Alignment */
+/* Workout view selector */
 .workout-view-selector {
   margin-bottom: var(--spacing-md);
   display: flex;
   justify-content: flex-end;
   position: relative;
-  width: 100%;
-  box-sizing: border-box;
 }
 
 /* Dropdown arrow for workout view selector */
@@ -123,15 +120,12 @@
   pointer-events: none;
 }
 
-/* Section styling - Fixed Layout */
+/* Section styling */
 .workout-section {
-  margin: 0 var(--spacing-sm) var(--spacing-md) var(--spacing-sm);
+  margin: var(--spacing-md);
   padding-top: var(--spacing-sm);
-  width: auto;
-  box-sizing: border-box;
 }
 
-/* Section title - Fixed Alignment */
 .workout-section-title {
   display: flex;
   justify-content: space-between;
@@ -142,14 +136,11 @@
   margin: 0 0 12px 0;
   color: var(--workout-primary);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  width: 100%;
-  box-sizing: border-box;
 }
 
-/* Time period selector - Fixed */
+/* Time period selector */
 .time-period-selector {
   position: relative;
-  display: inline-block;
 }
 
 /* Dropdown arrow for time period selector */
@@ -164,7 +155,7 @@
   pointer-events: none;
 }
 
-/* Dropdown styling - Fixed */
+/* Dropdown styling */
 select.time-period-dropdown {
   background-color: var(--card-bg) !important;
   color: var(--text-primary) !important;
@@ -174,14 +165,12 @@ select.time-period-dropdown {
   font-size: 14px;
   cursor: pointer;
   min-width: 110px;
-  max-width: 150px;
   height: 32px;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   outline: none;
   transition: border-color 0.2s, background-color 0.2s;
-  box-sizing: border-box;
 }
 
 /* Focus and hover states for dropdowns */
@@ -191,29 +180,23 @@ select.time-period-dropdown:hover {
   background-color: rgba(76, 175, 80, 0.05);
 }
 
-/* Chart styling - Fixed Overflow */
+/* Chart styling */
 .workout-chart-container {
   background-color: var(--card-bg);
   padding: var(--spacing-md);
   border-radius: var(--radius-md);
   margin-bottom: var(--spacing-lg);
-  overflow: visible;
+  overflow: hidden;
   position: relative;
-  width: 100%;
-  box-sizing: border-box;
 }
 
-/* Chart - Fixed Display */
 .workout-chart {
   height: 180px;
   position: relative;
   margin: var(--spacing-md) 0;
   padding-bottom: var(--spacing-sm);
-  width: 100%;
-  overflow: visible;
 }
 
-/* Y-axis labels - Fixed Positioning */
 .workout-chart-y-labels {
   position: absolute;
   left: 0;
@@ -227,10 +210,8 @@ select.time-period-dropdown:hover {
   font-size: 12px;
   padding: 5px 0;
   z-index: 5;
-  box-sizing: border-box;
 }
 
-/* Chart axis */
 .workout-chart-axis {
   position: absolute;
   width: 2px;
@@ -240,7 +221,6 @@ select.time-period-dropdown:hover {
   z-index: 2;
 }
 
-/* Chart labels - Fixed Overflow */
 .workout-chart-labels {
   display: flex;
   justify-content: space-between;
@@ -249,11 +229,8 @@ select.time-period-dropdown:hover {
   margin-top: var(--spacing-sm);
   padding-left: 30px;
   padding-right: 10px;
-  width: 100%;
-  box-sizing: border-box;
 }
 
-/* Chart points */
 .workout-chart-point {
   width: 8px;
   height: 8px;
@@ -284,15 +261,13 @@ select.time-period-dropdown:hover {
   opacity: 0.5;
 }
 
-/* Chart legend - Fixed Layout */
+/* Multi-line chart legend */
 .workout-chart-legend {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 15px;
   padding-left: 30px;
-  width: 100%;
-  box-sizing: border-box;
 }
 
 .workout-legend-item {
@@ -310,7 +285,7 @@ select.time-period-dropdown:hover {
   display: inline-block;
 }
 
-/* Streak styling - Fixed Layout */
+/* Streak styling */
 .workout-streak-bar {
   display: flex;
   align-items: center;
@@ -318,8 +293,6 @@ select.time-period-dropdown:hover {
   background-color: var(--card-bg);
   padding: var(--spacing-sm);
   border-radius: var(--radius-sm);
-  width: 100%;
-  box-sizing: border-box;
 }
 
 .workout-streak-date {
@@ -349,181 +322,120 @@ select.time-period-dropdown:hover {
 
 .workout-chart svg {
   animation: fadeInChart 0.5s ease-out;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
 }
 
 .workout-chart-point {
   animation: fadeInChart 0.5s ease-out;
 }
 
-/* Workout Management Modal Styles */
+/* NEW: Workout Management Modal Styles */
+
+/* Workout Management Modal */
 #workout-manage-modal {
+  z-index: 1000;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
-}
-
-#workout-manage-modal.active {
-  display: flex;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 #workout-manage-modal .modal-content {
-  background: var(--card-bg);
+  max-width: 400px;
+  width: 90%;
+  background-color: var(--card-bg);
   border-radius: var(--radius-lg);
   padding: var(--spacing-lg);
-  width: 90%;
-  max-width: 500px;
-  max-height: 80vh;
-  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+  color: var(--text-primary);
   position: relative;
 }
 
-/* Modal header */
 #workout-manage-modal .modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 600;
   margin-bottom: var(--spacing-lg);
-  padding-bottom: var(--spacing-sm);
-  border-bottom: 1px solid var(--border-color);
-}
-
-#workout-manage-modal .modal-header h3 {
-  margin: 0;
   color: var(--text-primary);
-  font-size: 1.3rem;
+  text-align: center;
 }
 
-#workout-manage-modal .close-btn {
-  background: none;
-  border: none;
-  color: var(--text-secondary);
-  cursor: pointer;
-  font-size: 1.5rem;
-  padding: 0;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--radius-sm);
-  transition: all var(--transition-fast);
-}
-
-#workout-manage-modal .close-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--text-primary);
-}
-
-/* Add workout section */
-.add-workout-section {
-  margin-bottom: var(--spacing-lg);
-}
-
-.workout-input-group {
-  display: flex;
-  gap: var(--spacing-sm);
-  margin-top: var(--spacing-sm);
-}
-
-#new-workout-input {
-  flex: 1;
+#workout-manage-modal .modal-input {
+  width: 100%;
   padding: var(--spacing-md);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-sm);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
   background: var(--card-bg);
   color: var(--text-primary);
+  font-family: var(--font-family);
   font-size: 1rem;
+  margin-bottom: var(--spacing-md);
+  box-sizing: border-box;
 }
 
-#new-workout-input:focus {
+#workout-manage-modal .modal-input:focus {
   outline: none;
   border-color: var(--workout-primary);
-  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
 }
 
-#add-workout-btn {
-  padding: var(--spacing-md);
-  background: var(--workout-primary);
-  color: white;
-  border: none;
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-xs);
-  font-weight: 600;
-}
-
-#add-workout-btn:hover {
-  background: var(--workout-dark);
-  transform: translateY(-1px);
-}
-
-#add-workout-btn:disabled {
-  background: var(--border-color);
-  cursor: not-allowed;
-  transform: none;
-}
-
-/* Workout list */
-.workout-list-section {
-  margin-bottom: var(--spacing-lg);
-}
-
+/* Workout List Styles */
 #workout-list {
-  max-height: 300px;
-  overflow-y: auto;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.02);
+  padding: var(--spacing-sm);
 }
 
+.light-theme #workout-list {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+/* Individual workout item styles */
 .workout-list-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: var(--spacing-sm) var(--spacing-md);
   margin-bottom: var(--spacing-xs);
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: var(--radius-sm);
+  background: var(--card-bg);
   border: 1px solid var(--border-color);
-  transition: all var(--transition-fast);
-}
-
-.light-theme .workout-list-item {
-  background: rgba(0, 0, 0, 0.03);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
 }
 
 .workout-list-item:hover {
-  background: rgba(255, 255, 255, 0.08);
-  transform: translateX(2px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.light-theme .workout-list-item:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.workout-list-item:last-child {
+  margin-bottom: 0;
 }
 
 .workout-list-item .workout-name {
-  font-size: 1rem;
   color: var(--text-primary);
   font-weight: 500;
+  flex: 1;
 }
 
 .workout-list-item .delete-btn {
-  background: #F44336;
+  background: var(--danger);
   color: white;
   border: none;
-  border-radius: var(--radius-full);
-  width: 32px;
-  height: 32px;
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-xs);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 32px;
+  height: 32px;
   transition: all var(--transition-fast);
 }
 
@@ -558,6 +470,28 @@ select.time-period-dropdown:hover {
   font-size: 1.2rem;
 }
 
+/* Add workout button in modal */
+#add-workout-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+}
+
+#add-workout-btn .material-icons-round {
+  font-size: 1.1rem;
+}
+
+/* Section headers in modal */
+#workout-manage-modal h4 {
+  margin: 0 0 var(--spacing-sm) 0;
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: var(--spacing-xs);
+}
+
 /* Modal buttons styling */
 #workout-manage-modal .modal-buttons {
   display: flex;
@@ -584,16 +518,6 @@ select.time-period-dropdown:hover {
 
 #workout-manage-modal .modal-button.cancel:hover {
   background-color: #555;
-}
-
-/* Section headers in modal */
-#workout-manage-modal h4 {
-  margin: 0 0 var(--spacing-sm) 0;
-  color: var(--text-primary);
-  font-size: 1rem;
-  font-weight: 600;
-  border-bottom: 1px solid var(--border-color);
-  padding-bottom: var(--spacing-xs);
 }
 
 /* Additional styles for when no workouts exist */
@@ -678,59 +602,10 @@ select.time-period-dropdown:hover {
   50% { opacity: 0.5; }
 }
 
-/* Simple Workout Filter Styles - Light Grey */
-#workout-type-filter {
-  padding: var(--spacing-sm) var(--spacing-md);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-sm);
-  background: var(--card-bg);
-  color: var(--text-primary);
-  font-family: var(--font-family);
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23999999' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 8l4 4 4-4'/%3e%3c/svg%3e") !important;
-  background-position: right 8px center;
-  background-repeat: no-repeat;
-  background-size: 12px;
-  padding-right: 32px;
-  min-width: 150px;
-}
-
-#workout-type-filter:focus {
-  outline: none;
-  border-color: #999999;
-  box-shadow: 0 0 0 2px rgba(153, 153, 153, 0.2);
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23999999' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 8l4 4 4-4'/%3e%3c/svg%3e") !important;
-}
-
-#workout-type-filter:hover {
-  border-color: rgba(153, 153, 153, 0.7);
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23999999' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 8l4 4 4-4'/%3e%3c/svg%3e") !important;
-}
-
-/* Override any existing dropdown arrow styles */
-select#workout-type-filter {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23999999' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 8l4 4 4-4'/%3e%3c/svg%3e") !important;
-}
-
-/* Enhanced Responsive Adjustments */
-@media (max-width: 768px) {
-  .workout-analytics-container {
-    padding: var(--spacing-sm);
-  }
-  
-  .workout-chart-container {
-    padding: var(--spacing-sm);
-  }
-  
+/* Responsive adjustments */
+@media (max-width: 600px) {
   .workout-chart {
     height: 150px;
-  }
-  
-  .workout-section {
-    margin: 0 var(--spacing-xs) var(--spacing-md) var(--spacing-xs);
   }
   
   .workout-chart-y-labels {
@@ -750,11 +625,6 @@ select#workout-type-filter {
   
   .workout-legend-item {
     font-size: 10px;
-  }
-  
-  #workout-type-filter {
-    min-width: 120px;
-    font-size: 0.85rem;
   }
 
   /* Responsive adjustments for workout management */
@@ -782,59 +652,6 @@ select#workout-type-filter {
 }
 
 /* Additional responsive adjustments for very small screens */
-@media (max-width: 480px) {
-  .workout-analytics-container {
-    padding: var(--spacing-xs);
-  }
-  
-  .workout-chart-container {
-    padding: var(--spacing-xs);
-  }
-  
-  .workout-chart {
-    height: 120px;
-  }
-  
-  .workout-section {
-    margin: 0 0 var(--spacing-md) 0;
-  }
-  
-  .workout-section-title {
-    font-size: 16px;
-  }
-  
-  .workout-streak-visual {
-    font-size: 12px;
-  }
-  
-  .workout-view-selector,
-  .time-period-selector {
-    width: 100%;
-  }
-  
-  select.time-period-dropdown {
-    width: 100%;
-    min-width: 0;
-    max-width: none;
-  }
-  
-  .workout-chart-labels {
-    font-size: 10px;
-    padding-left: 25px;
-    padding-right: 5px;
-  }
-  
-  .workout-chart-legend {
-    padding-left: 25px;
-  }
-  
-  #workout-type-filter {
-    min-width: 100px;
-    padding: var(--spacing-xs) var(--spacing-sm);
-    padding-right: 28px;
-  }
-}
-
 @media (max-width: 360px) {
   .workout-section-title {
     font-size: 16px;
